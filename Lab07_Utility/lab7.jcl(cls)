@@ -1,0 +1,16 @@
+//ST006CL JOB 1951510,JIANGWENYUAN,                                     00010001
+//            CLASS=A,                                                  00020000
+//            MSGLEVEL=(1,1),                                           00021000
+//            MSGCLASS=H,                                               00022000
+//            NOTIFY=&SYSUID,                                           00023000
+//            TIME=1                                                    00024000
+//* DELETE THE ST006.DATA.                                              00025000
+//STEP1     EXEC PGM=IEHPROGM                                           00026000
+//SYSPRINT  DD SYSOUT=*                                                 00028000
+//SYSUT1    DD UNIT=SYSDA,                                              00029000
+//             VOL=SER=BYWK00,                                          00029100
+//             DISP=SHR                                                 00030000
+//SYSIN     DD *                                                        00040000
+            SCRATCH DSNAME=ST006.DATA,VOL=SYSDA=BYWK00,PURGE            00050000
+            UNCATLG DSNAME=ST006.DATA                                   00060000
+/*                                                                      00070000
