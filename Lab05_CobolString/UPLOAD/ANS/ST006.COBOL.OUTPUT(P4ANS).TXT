@@ -1,0 +1,2 @@
+DATASET HAS           18 6-LENGTH WORDS.                                        
+EXECUTION DONE AT 2022-05-08  23:23:58                                          

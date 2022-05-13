@@ -1,0 +1,86 @@
+        1 //COMPCBL JOB 1951510,JIANGWENYUAN,                                     JOB17939
+          //            CLASS=A,                                                          
+          //            MSGLEVEL=(1,1),                                                   
+          //            MSGCLASS=H,                                                       
+          //            NOTIFY=&SYSUID,                                                   
+          //            TIME=2                                                            
+          //********************************************************/                     
+          IEFC653I SUBSTITUTION JCL - 1951510,JIANGWENYUAN,CLASS=A,MSGLEVEL=(1,1),MSGCLASS=H,NOTIFY=ST006,TIME=2
+        2 //COBRUN        EXEC PROC=IGYWCL,LNGPRFX='IGY'                                  
+        3 XXIGYWCL PROC  LNGPRFX='IGY.V3R3M0',SYSLBLK=3200,                       00001000
+          XX             LIBPRFX='CEE',                                           00002000
+          XX             PGMLIB='&&GOSET',GOPGM=GO                                00003000
+          XX*                                                                     00004000
+          XX********************************************************************* 00005000
+          XX*                                                                   * 00006000
+          XX*  Enterprise COBOL for z/OS                                        * 00007000
+          XX*               Version 3 Release 3 Modification 0                  * 00008000
+          XX*                                                                   * 00009000
+          XX*  LICENSED MATERIALS - PROPERTY OF IBM.                            * 00010000
+          XX*                                                                   * 00011000
+          XX*  5655-G53 5648-A25 (C) COPYRIGHT IBM CORP. 1991, 2004             * 00012000
+          XX*  ALL RIGHTS RESERVED                                              * 00013000
+          XX*                                                                   * 00014000
+          XX*  US GOVERNMENT USERS RESTRICTED RIGHTS - USE,                     * 00015000
+          XX*  DUPLICATION OR DISCLOSURE RESTRICTED BY GSA                      * 00016000
+          XX*  ADP SCHEDULE CONTRACT WITH IBM CORP.                             * 00017000
+          XX*                                                                   * 00018000
+          XX********************************************************************* 00019000
+          XX*                                                                     00020000
+          XX*  COMPILE AND LINK EDIT A COBOL PROGRAM                              00021000
+          XX*                                                                     00022000
+          XX*  PARAMETER  DEFAULT VALUE    USAGE                                  00023000
+          XX*   LNGPRFX   IGY.V3R3M0       PREFIX FOR LANGUAGE DATA SET NAMES     00024000
+          XX*   SYSLBLK   3200             BLOCKSIZE FOR OBJECT DATA SET          00025000
+          XX*   LIBPRFX   CEE              PREFIX FOR LIBRARY DATA SET NAMES      00026000
+          XX*   PGMLIB    &&GOSET          DATA SET NAME FOR LOAD MODULE          00027000
+          XX*   GOPGM     GO               MEMBER NAME FOR LOAD MODULE            00028000
+          XX*                                                                     00029000
+          XX*  CALLER MUST SUPPLY //COBOL.SYSIN DD ...                            00030000
+          XX*                                                                     00031000
+          XX*  CALLER MUST ALSO SUPPLY //COBOL.SYSLIB DD ... for COPY statements  00032000
+          XX*                                                                     00033000
+        4 XXCOBOL  EXEC PGM=IGYCRCTL,REGION=2048K                                 00034000
+        5 XXSTEPLIB  DD  DSNAME=&LNGPRFX..SIGYCOMP,                               00035000
+          XX             DISP=SHR                                                 00036000
+          IEFC653I SUBSTITUTION JCL - DSNAME=IGY.SIGYCOMP,DISP=SHR
+        6 XXSYSPRINT DD  SYSOUT=*                                                 00037000
+        7 XXSYSLIN   DD  DSNAME=&&LOADSET,UNIT=SYSALLDA,                          00038000
+          XX             DISP=(MOD,PASS),SPACE=(TRK,(3,3)),                       00039000
+          XX             DCB=(BLKSIZE=&SYSLBLK)                                   00040000
+          IEFC653I SUBSTITUTION JCL - DSNAME=&&LOADSET,UNIT=SYSALLDA,DISP=(MOD,PASS),SPACE=(TRK,(3,3)),
+          DCB=(BLKSIZE=3200)
+        8 XXSYSUT1   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00041000
+        9 XXSYSUT2   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00042000
+       10 XXSYSUT3   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00043000
+       11 XXSYSUT4   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00044000
+       12 XXSYSUT5   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00045000
+       13 XXSYSUT6   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00046000
+       14 XXSYSUT7   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00047000
+       15 //COBOL.SYSIN   DD DSN=ST006.COBOL.LAB(WCSRC),DISP=SHR                          
+       16 XXLKED   EXEC PGM=HEWL,COND=(8,LT,COBOL),REGION=1024K                   00048000
+       17 XXSYSLIB   DD  DSNAME=&LIBPRFX..SCEELKED,                               00049000
+          XX             DISP=SHR                                                 00050000
+          IEFC653I SUBSTITUTION JCL - DSNAME=CEE.SCEELKED,DISP=SHR
+       18 XXSYSPRINT DD  SYSOUT=*                                                 00051000
+       19 XXSYSLIN   DD  DSNAME=&&LOADSET,DISP=(OLD,DELETE)                       00052000
+       20 XX         DD  DDNAME=SYSIN                                             00053000
+       21 //LKED.SYSLMOD  DD DSNAME=ST006.LOADLIB(WC),DISP=SHR                            
+          X/SYSLMOD  DD  DSNAME=&PGMLIB(&GOPGM),                                  00054000
+          X/             SPACE=(TRK,(10,10,1)),                                   00055000
+          X/             UNIT=SYSALLDA,DISP=(MOD,PASS)                            00057000
+          IEFC653I SUBSTITUTION JCL - DSNAME=&&GOSET(GO),SPACE=(TRK,(10,10,1)),UNIT=SYSALLDA,DISP=(MOD,PASS)
+       22 XXSYSUT1   DD  UNIT=SYSALLDA,SPACE=(TRK,(10,10))                        00058000
+          //********************************************************/                     
+       23 // IF RC = 0 THEN                                                               
+       24 //RUN           EXEC PGM=WC                                                     
+       25 //STEPLIB       DD DSN=ST006.LOADLIB,DISP=SHR                                   
+       26 //GETLINE       DD DSN=ST065.DATA(STRINGDA),DISP=OLD                            
+       27 //PRTDONE       DD SYSOUT=*,OUTLIM=15000                                        
+       28 //PRTLINE       DD SYSOUT=*,OUTLIM=15000                                        
+       29 //SYSOUT        DD SYSOUT=*,OUTLIM=15000                                        
+       30 //CEEDUMP       DD DUMMY                                                        
+       31 //SYSUDUMP      DD DUMMY                                                        
+          //********************************************************/                     
+       32 // ELSE                                                                         
+       33 // ENDIF                                                                        

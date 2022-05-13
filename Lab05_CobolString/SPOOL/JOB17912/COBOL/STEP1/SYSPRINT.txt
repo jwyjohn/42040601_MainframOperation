@@ -1,0 +1,90 @@
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0                         Date 05/08/2022  Time 10:45:18   Page     1                
+0Options in effect:                                                                                                                  
+  NOADATA                                                                                                                            
+    ADV                                                                                                                              
+    QUOTE                                                                                                                            
+    ARITH(COMPAT)                                                                                                                    
+  NOAWO                                                                                                                              
+  NOBLOCK0                                                                                                                           
+    BUFSIZE(4096)                                                                                                                    
+  NOCICS                                                                                                                             
+    CODEPAGE(1140)                                                                                                                   
+  NOCOMPILE(S)                                                                                                                       
+  NOCURRENCY                                                                                                                         
+    DATA(31)                                                                                                                         
+  NODATEPROC                                                                                                                         
+    DBCS                                                                                                                             
+  NODECK                                                                                                                             
+  NODIAGTRUNC                                                                                                                        
+  NODLL                                                                                                                              
+  NODUMP                                                                                                                             
+  NODYNAM                                                                                                                            
+  NOEXIT                                                                                                                             
+  NOEXPORTALL                                                                                                                        
+  NOFASTSRT                                                                                                                          
+    FLAG(I,I)                                                                                                                        
+  NOFLAGMIG4                                                                                                                         
+  NOFLAGSTD                                                                                                                          
+    INTDATE(ANSI)                                                                                                                    
+    LANGUAGE(EN)                                                                                                                     
+  NOLIB                                                                                                                              
+    LINECOUNT(60)                                                                                                                    
+  NOLIST                                                                                                                             
+  NOMAP                                                                                                                              
+  NOMDECK                                                                                                                            
+  NONAME                                                                                                                             
+    NSYMBOL(NATIONAL)                                                                                                                
+  NONUMBER                                                                                                                           
+    NUMPROC(NOPFD)                                                                                                                   
+    OBJECT                                                                                                                           
+  NOOFFSET                                                                                                                           
+  NOOPTIMIZE                                                                                                                         
+    OUTDD(SYSOUT)                                                                                                                    
+    PGMNAME(COMPAT)                                                                                                                  
+    RENT                                                                                                                             
+    RMODE(AUTO)                                                                                                                      
+    SEQUENCE                                                                                                                         
+    SIZE(MAX)                                                                                                                        
+    SOURCE                                                                                                                           
+    SPACE(1)                                                                                                                         
+  NOSQL                                                                                                                              
+    SQLCCSID                                                                                                                         
+  NOSSRANGE                                                                                                                          
+  NOTERM                                                                                                                             
+  NOTEST                                                                                                                             
+  NOTHREAD                                                                                                                           
+    TRUNC(STD)                                                                                                                       
+  NOVBREF                                                                                                                            
+  NOWORD                                                                                                                             
+    XMLPARSE(XMLSS)                                                                                                                  
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0                         Date 05/08/2022  Time 10:45:18   Page     2                
+0   XREF(FULL)                                                                                                                       
+  NOZONECHECK                                                                                                                        
+    YEARWINDOW(1900)                                                                                                                 
+    ZWB                                                                                                                              
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               HELLO     Date 05/08/2022  Time 10:45:18   Page     3                
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference           
+0  000001                 IDENTIFICATION DIVISION.                                                                                   
+   000002                 PROGRAM-ID.    HELLO.                                                                                      
+   000003                 AUTHOR         JWY.                                                                                        
+   000004                 ENVIRONMENT    DIVISION.                                                                                   
+   000005                 DATA           DIVISION.                                                                                   
+   000006                 PROCEDURE      DIVISION.                                                                                   
+   000007                    DISPLAY "HELLO COBOL!".                                                                                 
+   000008                    DISPLAY "MEOW MEOW~".                                                                                   
+   000009                    STOP RUN.                                                                                               
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               HELLO     Date 05/08/2022  Time 10:45:18   Page     4                
+0An "M" preceding a data-name reference indicates that the data-name is modified by this reference.                                  
+                                                                                                                                     
+  Defined   Cross-reference of data names   References                                                                               
+                                                                                                                                     
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               HELLO     Date 05/08/2022  Time 10:45:18   Page     5                
+0 Defined   Cross-reference of programs     References                                                                               
+                                                                                                                                     
+        2   HELLO                                                                                                                    
+-* Statistics for COBOL program HELLO:                                                                                               
+ *    Source records = 9                                                                                                             
+ *    Data Division statements = 0                                                                                                   
+ *    Procedure Division statements = 3                                                                                              
+0End of compilation 1,  program HELLO,  no statements flagged.                                                                       
+0Return code 0                                                                                                                       

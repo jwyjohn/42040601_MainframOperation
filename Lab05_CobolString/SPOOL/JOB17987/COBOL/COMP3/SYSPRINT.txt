@@ -1,0 +1,289 @@
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0                         Date 05/08/2022  Time 22:43:34   Page     1                
+0Options in effect:                                                                                                                  
+  NOADATA                                                                                                                            
+    ADV                                                                                                                              
+    QUOTE                                                                                                                            
+    ARITH(COMPAT)                                                                                                                    
+  NOAWO                                                                                                                              
+  NOBLOCK0                                                                                                                           
+    BUFSIZE(4096)                                                                                                                    
+  NOCICS                                                                                                                             
+    CODEPAGE(1140)                                                                                                                   
+  NOCOMPILE(S)                                                                                                                       
+  NOCURRENCY                                                                                                                         
+    DATA(31)                                                                                                                         
+  NODATEPROC                                                                                                                         
+    DBCS                                                                                                                             
+  NODECK                                                                                                                             
+  NODIAGTRUNC                                                                                                                        
+  NODLL                                                                                                                              
+  NODUMP                                                                                                                             
+  NODYNAM                                                                                                                            
+  NOEXIT                                                                                                                             
+  NOEXPORTALL                                                                                                                        
+  NOFASTSRT                                                                                                                          
+    FLAG(I,I)                                                                                                                        
+  NOFLAGMIG4                                                                                                                         
+  NOFLAGSTD                                                                                                                          
+    INTDATE(ANSI)                                                                                                                    
+    LANGUAGE(EN)                                                                                                                     
+  NOLIB                                                                                                                              
+    LINECOUNT(60)                                                                                                                    
+  NOLIST                                                                                                                             
+  NOMAP                                                                                                                              
+  NOMDECK                                                                                                                            
+  NONAME                                                                                                                             
+    NSYMBOL(NATIONAL)                                                                                                                
+  NONUMBER                                                                                                                           
+    NUMPROC(NOPFD)                                                                                                                   
+    OBJECT                                                                                                                           
+  NOOFFSET                                                                                                                           
+  NOOPTIMIZE                                                                                                                         
+    OUTDD(SYSOUT)                                                                                                                    
+    PGMNAME(COMPAT)                                                                                                                  
+    RENT                                                                                                                             
+    RMODE(AUTO)                                                                                                                      
+    SEQUENCE                                                                                                                         
+    SIZE(MAX)                                                                                                                        
+    SOURCE                                                                                                                           
+    SPACE(1)                                                                                                                         
+  NOSQL                                                                                                                              
+    SQLCCSID                                                                                                                         
+  NOSSRANGE                                                                                                                          
+  NOTERM                                                                                                                             
+  NOTEST                                                                                                                             
+  NOTHREAD                                                                                                                           
+    TRUNC(STD)                                                                                                                       
+  NOVBREF                                                                                                                            
+  NOWORD                                                                                                                             
+    XMLPARSE(XMLSS)                                                                                                                  
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0                         Date 05/08/2022  Time 22:43:34   Page     2                
+0   XREF(FULL)                                                                                                                       
+  NOZONECHECK                                                                                                                        
+    YEARWINDOW(1900)                                                                                                                 
+    ZWB                                                                                                                              
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               THECNT    Date 05/08/2022  Time 22:43:34   Page     3                
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference           
+0  000001                IDENTIFICATION DIVISION.                                                                                    
+   000002               ****************************************************************                                             
+   000003               *    IDENTIFICATION DIVISION                                   *                                             
+   000004               *    PROBLEM-3                                                 *                                             
+   000005               *    AUTHOR      JIANGWENYUAN                                  *                                             
+   000006               *    STUDNET ID  1951510                                       *                                             
+   000007               *    HLQ         ST006                                         *                                             
+   000008               ****************************************************************                                             
+   000009                PROGRAM-ID.    THECNT.                                                                                      
+   000010                AUTHOR.        JWY.                                                                                         
+   000011               *                                                                                                            
+   000012                ENVIRONMENT DIVISION.                                                                                       
+   000013               *                                                                                                            
+   000014                INPUT-OUTPUT SECTION.                                                                                       
+   000015                FILE-CONTROL.                                                                                               
+   000016                    SELECT GET-LINE ASSIGN TO GETLINE.                                    21                                
+   000017                    SELECT PRT-DONE ASSIGN TO PRTDONE.                                    24                                
+   000018                                                                                                                            
+   000019                DATA DIVISION.                                                                                              
+   000020                FILE SECTION.                                                                                               
+   000021                FD  GET-LINE RECORD CONTAINS 80 CHARACTERS RECORDING MODE F.                                                
+   000022                01 GET-REC           PIC X(80) VALUE SPACES.                              IMP                               
+                                                                                                                                     
+ ==000022==> IGYDS1158-I A non-level-88 "VALUE" clause was found in the "FILE SECTION" or "LINKAGE                                   
+                         SECTION".  The "VALUE" clause was treated as comments.                                                      
+                                                                                                                                     
+   000023                                                                                                                            
+   000024                FD  PRT-DONE RECORD CONTAINS 80 CHARACTERS RECORDING MODE F.                                                
+   000025                01 PRT-REC-DONE      PIC X(80) VALUE SPACES.                              IMP                               
+                                                                                                                                     
+ ==000025==> IGYDS1158-I A non-level-88 "VALUE" clause was found in the "FILE SECTION" or "LINKAGE                                   
+                         SECTION".  The "VALUE" clause was treated as comments.                                                      
+                                                                                                                                     
+   000026                                                                                                                            
+   000027                WORKING-STORAGE SECTION.                                                                                    
+   000028                                                                                                                            
+   000029                01 PUNC              PIC X(7)  VALUE ',.()!"'.                                                              
+   000030                                                                                                                            
+   000031                01 THE-WORD          PIC X(80) VALUE 'THE'.                                                                 
+   000032                                                                                                                            
+   000033                01 PGM-VARIABLES.                                                                                           
+   000034                   05 PUNC-COUNT     PIC 9(6)  VALUE ZEROS.                               IMP                               
+   000035                                                                                                                            
+   000036                                                                                                                            
+   000037                01 TEMP-VARIABLES.                                                                                          
+   000038                   05 WORD-BUF       PIC X(80).                                                                             
+   000039                   05 WORD-LEN       PIC 99    VALUE ZEROS.                               IMP                               
+   000040                   05 PUNC-TMP       PIC 99    VALUE ZEROS.                               IMP                               
+   000041                   05 UNSTRPTR       PIC 99    VALUE 1.                                                                     
+   000042                      88 USTRDONE              VALUE 81.                                                                    
+   000043                                                                                                                            
+   000044                01 YYYYMMDD          PIC X(8).                                                                              
+   000045                                                                                                                            
+   000046                01 REFMOD-TIME-ITEM  PIC X(8).                                                                              
+   000047                                                                                                                            
+   000048                01 TIMEDATE-LINE.                                                                                           
+   000049                   05 TPROMT         PIC X(18) VALUE 'EXECUTION DONE AT '.                                                  
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               THECNT    Date 05/08/2022  Time 22:43:34   Page     4                
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference           
+0  000050                   05 YYYY           PIC X(4).                                                                              
+   000051                   05 FILLER         PIC X(1)  VALUE '-'.                                                                   
+   000052                   05 MM             PIC X(2).                                                                              
+   000053                   05 FILLER         PIC X(1)  VALUE '-'.                                                                   
+   000054                   05 DD             PIC X(2).                                                                              
+   000055                   05 FILLER         PIC X(2)  VALUE '  '.                                                                  
+   000056                   05 HH             PIC X(2).                                                                              
+   000057                   05 FILLER         PIC X(1)  VALUE ':'.                                                                   
+   000058                   05 MIN            PIC X(2).                                                                              
+   000059                   05 FILLER         PIC X(1)  VALUE ':'.                                                                   
+   000060                   05 SS             PIC X(2).                                                                              
+   000061               *   05 FILLER         PIC X(42)  VALUE SPACES.                                                               
+   000062                                                                                                                            
+   000063                01 RESULT-LINE.                                                                                             
+   000064                   05 RAPROMT         PIC X(18) VALUE 'DATASET HAS '.                                                       
+   000065                   05 RESNUM          PIC Z(6)  VALUE ZEROS.                              IMP                               
+   000066                   05 RBPROMT         PIC X(14) VALUE ' PUNCTUATIONS.'.                                                     
+   000067               *   05 FILLER          PIC X(49)  VALUE SPACES.                                                              
+   000068                                                                                                                            
+   000069               ****************************************************************                                             
+   000070               *                  PROCEDURE DIVISION                          *                                             
+   000071               ****************************************************************                                             
+   000072                PROCEDURE DIVISION.                                                                                         
+   000073               *                                                                                                            
+   000074                A000-START.                                                                                                 
+   000075                    PERFORM A000-PROCL.                                                   79                                
+   000076                    PERFORM A000-DONE.                                                    122                               
+   000077                    STOP RUN.                                                                                               
+   000078               *                                                                                                            
+   000079                A000-PROCL.                                                                                                 
+   000080                    OPEN INPUT GET-LINE.                                                  21                                
+   000081                    READ GET-LINE                                                         21                                
+   000082                    AT END                                                                                                  
+   000083      1                MOVE HIGH-VALUES TO GET-REC                                        IMP 22                            
+   000084                    END-READ.                                                                                               
+   000085                    PERFORM UNTIL GET-REC = HIGH-VALUES                                   22 IMP                            
+   000086      1                     PERFORM A000-COUNTWD                                          95                                
+   000087      1                     READ GET-LINE                                                 21                                
+   000088      1                     AT END                                                                                          
+   000089      2                        MOVE HIGH-VALUES TO GET-REC                                IMP 22                            
+   000090      1                     END-READ                                                                                        
+   000091                    END-PERFORM.                                                                                            
+   000092                    CLOSE GET-LINE.                                                       21                                
+   000093                                                                                                                            
+   000094               *                                                                                                            
+   000095                A000-COUNTWD.                                                                                               
+   000096                    MOVE GET-REC(1:72) TO WORD-BUF.                                       22 38                             
+   000097                    MOVE 1 TO UNSTRPTR.                                                   41                                
+   000098                    PERFORM A000-PUNC.                                                    101                               
+   000099                                                                                                                            
+   000100               *                                                                                                            
+   000101                A000-PUNC.                                                                                                  
+   000102                    MOVE ZEROS TO PUNC-TMP.                                               IMP 40                            
+   000103                    INSPECT WORD-BUF TALLYING PUNC-TMP FOR ALL ".".                       38 40                             
+   000104                    ADD PUNC-TMP TO PUNC-COUNT.                                           40 34                             
+   000105                    MOVE ZEROS TO PUNC-TMP.                                               IMP 40                            
+   000106                    INSPECT WORD-BUF TALLYING PUNC-TMP FOR ALL ",".                       38 40                             
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               THECNT    Date 05/08/2022  Time 22:43:34   Page     5                
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference           
+0  000107                    ADD PUNC-TMP TO PUNC-COUNT.                                           40 34                             
+   000108                    MOVE ZEROS TO PUNC-TMP.                                               IMP 40                            
+   000109                    INSPECT WORD-BUF TALLYING PUNC-TMP FOR ALL "(".                       38 40                             
+   000110                    ADD PUNC-TMP TO PUNC-COUNT.                                           40 34                             
+   000111                    MOVE ZEROS TO PUNC-TMP.                                               IMP 40                            
+   000112                    INSPECT WORD-BUF TALLYING PUNC-TMP FOR ALL ")".                       38 40                             
+   000113                    ADD PUNC-TMP TO PUNC-COUNT.                                           40 34                             
+   000114                    MOVE ZEROS TO PUNC-TMP.                                               IMP 40                            
+   000115                    INSPECT WORD-BUF TALLYING PUNC-TMP FOR ALL "!".                       38 40                             
+   000116                    ADD PUNC-TMP TO PUNC-COUNT.                                           40 34                             
+   000117                    MOVE ZEROS TO PUNC-TMP.                                               IMP 40                            
+   000118                    INSPECT WORD-BUF TALLYING PUNC-TMP FOR ALL QUOTE.                     38 40 IMP                         
+   000119                    ADD PUNC-TMP TO PUNC-COUNT.                                           40 34                             
+   000120                                                                                                                            
+   000121               *                                                                                                            
+   000122                A000-DONE.                                                                                                  
+   000123                    OPEN OUTPUT PRT-DONE.                                                 24                                
+   000124                    MOVE SPACES TO PRT-REC-DONE.                                          IMP 25                            
+   000125                    MOVE PUNC-COUNT TO RESNUM.                                            34 65                             
+   000126                    MOVE RESULT-LINE TO PRT-REC-DONE.                                     63 25                             
+   000127                    WRITE PRT-REC-DONE.                                                   25                                
+   000128                    MOVE SPACES TO PRT-REC-DONE.                                          IMP 25                            
+   000129                    ACCEPT REFMOD-TIME-ITEM FROM TIME.                                    46                                
+   000130                    MOVE FUNCTION CURRENT-DATE(1:8) TO YYYYMMDD.                          IFN 44                            
+   000131                    MOVE YYYYMMDD(1:4) TO YYYY IN TIMEDATE-LINE.                          44 50 48                          
+   000132                    MOVE YYYYMMDD(5:2) TO MM IN TIMEDATE-LINE.                            44 52 48                          
+   000133                    MOVE YYYYMMDD(7:2) TO DD IN TIMEDATE-LINE.                            44 54 48                          
+   000134                    MOVE REFMOD-TIME-ITEM(1:2) TO HH IN TIMEDATE-LINE.                    46 56 48                          
+   000135                    MOVE REFMOD-TIME-ITEM(3:2) TO MIN IN TIMEDATE-LINE.                   46 58 48                          
+   000136                    MOVE REFMOD-TIME-ITEM(5:2) TO SS IN TIMEDATE-LINE.                    46 60 48                          
+   000137                    MOVE TIMEDATE-LINE TO PRT-REC-DONE.                                   48 25                             
+   000138                    WRITE PRT-REC-DONE.                                                   25                                
+   000139               *                                                                                                            
+   000140                    CLOSE PRT-DONE.                                                       24                                
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               THECNT    Date 05/08/2022  Time 22:43:34   Page     6                
+0An "M" preceding a data-name reference indicates that the data-name is modified by this reference.                                  
+                                                                                                                                     
+  Defined   Cross-reference of data names   References                                                                               
+                                                                                                                                     
+       54   DD . . . . . . . . . . . . . .  M133                                                                                     
+       21   GET-LINE . . . . . . . . . . .  16 80 81 87 92                                                                           
+       22   GET-REC. . . . . . . . . . . .  M83 85 M89 96                                                                            
+       56   HH . . . . . . . . . . . . . .  M134                                                                                     
+       58   MIN. . . . . . . . . . . . . .  M135                                                                                     
+       52   MM . . . . . . . . . . . . . .  M132                                                                                     
+       33   PGM-VARIABLES                                                                                                            
+       24   PRT-DONE . . . . . . . . . . .  17 123 140                                                                               
+       25   PRT-REC-DONE . . . . . . . . .  M124 M126 127 M128 M137 138                                                              
+       29   PUNC                                                                                                                     
+       34   PUNC-COUNT . . . . . . . . . .  M104 M107 M110 M113 M116 M119 125                                                        
+       40   PUNC-TMP . . . . . . . . . . .  M102 M103 104 M105 M106 107 M108 M109 110 M111 M112 113 M114 M115 116 M117 M118          
+                                            119                                                                                      
+       64   RAPROMT                                                                                                                  
+       66   RBPROMT                                                                                                                  
+       46   REFMOD-TIME-ITEM . . . . . . .  M129 134 135 136                                                                         
+       65   RESNUM . . . . . . . . . . . .  M125                                                                                     
+       63   RESULT-LINE. . . . . . . . . .  126                                                                                      
+       60   SS . . . . . . . . . . . . . .  M136                                                                                     
+       37   TEMP-VARIABLES                                                                                                           
+       31   THE-WORD                                                                                                                 
+       48   TIMEDATE-LINE. . . . . . . . .  131 132 133 134 135 136 137                                                              
+       49   TPROMT                                                                                                                   
+       41   UNSTRPTR . . . . . . . . . . .  M97                                                                                      
+       42   USTRDONE                                                                                                                 
+       38   WORD-BUF . . . . . . . . . . .  M96 103 106 109 112 115 118                                                              
+       39   WORD-LEN                                                                                                                 
+       50   YYYY . . . . . . . . . . . . .  M131                                                                                     
+       44   YYYYMMDD . . . . . . . . . . .  M130 131 132 133                                                                         
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               THECNT    Date 05/08/2022  Time 22:43:34   Page     7                
+0Context usage is indicated by the letter preceding a procedure-name reference.                                                      
+ These letters and their meanings are:                                                                                               
+     A = ALTER (procedure-name)                                                                                                      
+     D = GO TO (procedure-name) DEPENDING ON                                                                                         
+     E = End of range of (PERFORM) through (procedure-name)                                                                          
+     G = GO TO (procedure-name)                                                                                                      
+     P = PERFORM (procedure-name)                                                                                                    
+     T = (ALTER) TO PROCEED TO (procedure-name)                                                                                      
+     U = USE FOR DEBUGGING (procedure-name)                                                                                          
+                                                                                                                                     
+  Defined   Cross-reference of procedures   References                                                                               
+                                                                                                                                     
+       95   A000-COUNTWD . . . . . . . . .  P86                                                                                      
+      122   A000-DONE. . . . . . . . . . .  P76                                                                                      
+       79   A000-PROCL . . . . . . . . . .  P75                                                                                      
+      101   A000-PUNC. . . . . . . . . . .  P98                                                                                      
+       74   A000-START                                                                                                               
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               THECNT    Date 05/08/2022  Time 22:43:34   Page     8                
+0 Defined   Cross-reference of programs     References                                                                               
+                                                                                                                                     
+        9   THECNT                                                                                                                   
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               THECNT    Date 05/08/2022  Time 22:43:34   Page     9                
+0LineID  Message code  Message text                                                                                                  
+                                                                                                                                     
+     22  IGYDS1158-I   A non-level-88 "VALUE" clause was found in the "FILE SECTION" or "LINKAGE SECTION".  The "VALUE" clause was   
+                       treated as comments.                                                                                          
+                                                                                                                                     
+                       Same message on line:     25                                                                                  
+-Messages    Total    Informational    Warning    Error    Severe    Terminating                                                     
+0Printed:       2           2                                                                                                        
+-* Statistics for COBOL program THECNT:                                                                                              
+ *    Source records = 140                                                                                                           
+ *    Data Division statements = 26                                                                                                  
+ *    Procedure Division statements = 49                                                                                             
+0End of compilation 1,  program THECNT,  highest severity 0.                                                                         
+0Return code 0                                                                                                                       

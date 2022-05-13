@@ -1,0 +1,35 @@
+1                         J E S 2  J O B  L O G  --  S Y S T E M  B Y 0 1  --  N O D E  N 5              
+0 
+ 22.43.27 JOB17987 ---- SUNDAY,    08 MAY 2022 ----
+ 22.43.27 JOB17987  IRR010I  USERID ST006    IS ASSIGNED TO THIS JOB.
+ 22.43.27 JOB17987  IEF677I WARNING MESSAGE(S) FOR JOB CMPWDCNT ISSUED
+ 22.43.28 JOB17987  ICH70001I ST006    LAST ACCESS AT 22:43:26 ON SUNDAY, MAY 8, 2022
+ 22.43.28 JOB17987  $HASP373 CMPWDCNT STARTED - WLM INIT  - SRVCLASS BATCHMED - SYS BY01
+ 22.43.28 JOB17987  IEF403I CMPWDCNT - STARTED - TIME=22.43.28
+ 22.43.30 JOB17987  -                                                --TIMINGS (MINS.)--            ----PAGING COUNTS---
+ 22.43.30 JOB17987  -JOBNAME  STEPNAME PROCSTEP    RC   EXCP   CONN    TCB    SRB  CLOCK   SERV  PG  PAGE  SWAP   VIO SWAPS
+ 22.43.30 JOB17987  -CMPWDCNT COMP1    COBOL       00    453      0 551177    .00     .0   1310   0     0     0     0     0
+ 22.43.31 JOB17987  -CMPWDCNT COMP1    LKED        00    182      0 551177    .00     .0    826   0     0     0     0     0
+ 22.43.31 JOB17987  -CMPWDCNT RUN1                 00     59      0 551177    .00     .0    319   0     0     0     0     0
+ 22.43.32 JOB17987  -CMPWDCNT COMP2    COBOL       00    462      0 551177    .00     .0   1045   0     0     0     0     0
+ 22.43.33 JOB17987  -CMPWDCNT COMP2    LKED        00    182      0 551177    .00     .0    765   0     0     0     0     0
+ 22.43.33 JOB17987  -CMPWDCNT RUN2                 00     58      0 551177    .00     .0    186   0     0     0     0     0
+ 22.43.35 JOB17987  -CMPWDCNT COMP3    COBOL       00    460      0 551177    .00     .0   1230   0     0     0     0     0
+ 22.43.35 JOB17987  -CMPWDCNT COMP3    LKED        00    183      0 551177    .00     .0    824   0     0     0     0     0
+ 22.43.36 JOB17987  -CMPWDCNT RUN3                 00     58      0 551177    .00     .0    256   0     0     0     0     0
+ 22.43.37 JOB17987  -CMPWDCNT COMP4    COBOL       00    455      0 551177    .00     .0   1289   0     0     0     0     0
+ 22.43.38 JOB17987  -CMPWDCNT COMP4    LKED        00    176      0 551177    .00     .0    951   0     0     0     0     0
+ 22.43.38 JOB17987  -CMPWDCNT RUN4                 00     60      0 551177    .00     .0    376   0     0     0     0     0
+ 22.43.40 JOB17987  -CMPWDCNT COMP5    COBOL       00    455      0 551177    .00     .0   1109   0     0     0     0     0
+ 22.43.40 JOB17987  -CMPWDCNT COMP5    LKED        00    181      0 551177    .00     .0    694   0     0     0     0     0
+ 22.43.41 JOB17987  -CMPWDCNT RUN5                 00     60      0 551177    .00     .0    249   0     0     0     0     0
+ 22.43.41 JOB17987  IEF404I CMPWDCNT - ENDED - TIME=22.43.41
+ 22.43.41 JOB17987  -CMPWDCNT ENDED.  NAME-JIANGWENYUAN         TOTAL TCB CPU TIME=   .04  TOTAL ELAPSED TIME=    .2
+ 22.43.41 JOB17987  $HASP395 CMPWDCNT ENDED
+0------ JES2 JOB STATISTICS ------
+-  08 MAY 2022 JOB EXECUTION DATE
+-           86 CARDS READ
+-        3,103 SYSOUT PRINT RECORDS
+-            0 SYSOUT PUNCH RECORDS
+-          165 SYSOUT SPOOL KBYTES
+-         0.22 MINUTES EXECUTION TIME

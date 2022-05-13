@@ -1,0 +1,4 @@
+20220508 1504  TOTAL words              259                                     
+20220508 1504  SIX LETTER count          18                                     
+20220508 1504  THE count                  7                                     
+20220508 1504  PUNC count                40                                     

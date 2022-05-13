@@ -1,0 +1,20 @@
+PALINDROME AT LINE 000001 :      A                                              
+PALINDROME AT LINE 000001 :      A                                              
+PALINDROME AT LINE 000001 :      A                                              
+PALINDROME AT LINE 000002 :      A                                              
+PALINDROME AT LINE 000003 :      A                                              
+PALINDROME AT LINE 000004 :      A                                              
+PALINDROME AT LINE 000005 :      A                                              
+PALINDROME AT LINE 000007 :      A                                              
+PALINDROME AT LINE 000010 :      A                                              
+PALINDROME AT LINE 000011 :      A                                              
+PALINDROME AT LINE 000013 :      A                                              
+PALINDROME AT LINE 000014 :      A                                              
+PALINDROME AT LINE 000016 :      A                                              
+PALINDROME AT LINE 000019 :      REFER                                          
+PALINDROME AT LINE 000019 :      A                                              
+PALINDROME AT LINE 000020 :      A                                              
+PALINDROME AT LINE 000023 :      A                                              
+PALINDROME AT LINE 000026 :      A                                              
+PALINDROME AT LINE 000026 :      A                                              
+EXECUTION DONE AT 2022-05-08  23:23:52                                          
